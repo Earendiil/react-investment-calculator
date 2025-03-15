@@ -6,7 +6,7 @@ const InvestmentCalculator = () => {
     const [annualRate, setAnnualRate] = useState(10);
     const [retirementTarget, setRetirementTarget] = useState(200000);
     const [result, setResult] = useState(null);
-    const yearsArray = [2, 5, 8, 10, 15, 20, 25];
+    const yearsArray = [2, 5, 8, 10, 15, 20, 25, 35, 40, 50];
 
     const calculateMonthsToReachGoal = (start, monthly, annualRate, target) => {
         let balance = start;
@@ -39,31 +39,33 @@ const InvestmentCalculator = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-700">
             <div className="p-6 max-w-lg w-full bg-purple-300 shadow-lg rounded-mg">
-                <h1 className="text-2xl font-bold text-center mb-6 text-blue-600">Investment Calculator</h1>
+                <h1 className="text-2xl font-bold text-center mb-6 text-blue-600 hover:text-blue-800 transition" >Investment Calculator</h1>
 
                 <div className="space-y-4">
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Starting Investment (€)</label>
+                        <label className="block text-lg font-semibold text-gray-700">Starting Investment </label>
                         <input type="number" value={startingInvestment} onChange={e => setStartingInvestment(Number(e.target.value))}
-                            className="border p-2 w-full rounded-md shadow-sm focus:ring focus:ring-blue-300 bg-gray-100" />
+                            className="border p-2 w-full rounded-lg shadow-sm focus:ring focus:ring-blue-300 focus:bg-yellow-200 bg-gray-100 
+                            "
+                             />
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Monthly Investment (€)</label>
+                        <label className="block text-ls font-semibold text-gray-700">Monthly Investment </label>
                         <input type="number" value={monthlyInvestment} onChange={e => setMonthlyInvestment(Number(e.target.value))}
-                            className="border p-2 w-full rounded-md shadow-sm focus:ring focus:ring-blue-300 bg-gray-100" />
+                            className="border p-2 w-full rounded-lg shadow-sm focus:ring focus:ring-blue-300 focus:bg-yellow-200 bg-gray-100" />
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Annual Rate (%)</label>
+                        <label className="block text-lg font-semibold text-gray-700">Annual Rate (%)</label>
                         <input type="number" value={annualRate} onChange={e => setAnnualRate(Number(e.target.value))}
-                            className="border p-2 w-full rounded-md shadow-sm focus:ring focus:ring-blue-300 bg-gray-100" />
+                            className="border p-2 w-full rounded-lg shadow-sm focus:ring focus:ring-blue-300 focus:bg-yellow-200 bg-gray-100 " />
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Retirement Target (€)</label>
+                        <label className="block text-lg font-semibold text-gray-700">Retirement Target </label>
                         <input type="number" value={retirementTarget} onChange={e => setRetirementTarget(Number(e.target.value))}
-                            className="border p-2 w-full rounded-md shadow-sm focus:ring focus:ring-blue-300 bg-gray-100 " />
+                            className="border p-2 w-full rounded-lg shadow-sm focus:ring focus:ring-blue-300 focus:bg-yellow-200 bg-gray-100 " />
                     </div>
 
                     <button onClick={handleCalculate}
