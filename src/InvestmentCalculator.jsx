@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const InvestmentCalculator = () => {
     const [startingInvestment, setStartingInvestment] = useState(5000);
-    const [monthlyInvestment, setMonthlyInvestment] = useState(2000);
+    const [monthlyInvestment, setMonthlyInvestment] = useState(1000);
     const [annualRate, setAnnualRate] = useState(10);
     const [retirementTarget, setRetirementTarget] = useState(200000);
     const [result, setResult] = useState(null);
@@ -37,33 +37,33 @@ const InvestmentCalculator = () => {
     };
 
     return (
-        <div className="bg-black-100 min-h-screen flex items-center justify-center">
-            <div className="p-6 max-w-lg w-full bg-gray-300 shadow-lg rounded-lg">
+        <div className="min-h-screen flex items-center justify-center bg-gray-700">
+            <div className="p-6 max-w-lg w-full bg-purple-300 shadow-lg rounded-mg">
                 <h1 className="text-2xl font-bold text-center mb-6 text-blue-600">Investment Calculator</h1>
 
                 <div className="space-y-4">
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Starting Investment (€)</label>
                         <input type="number" value={startingInvestment} onChange={e => setStartingInvestment(Number(e.target.value))}
-                            className="border p-2 w-full rounded-md shadow-sm focus:ring focus:ring-blue-300" />
+                            className="border p-2 w-full rounded-md shadow-sm focus:ring focus:ring-blue-300 bg-gray-100" />
                     </div>
 
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Monthly Investment (€)</label>
                         <input type="number" value={monthlyInvestment} onChange={e => setMonthlyInvestment(Number(e.target.value))}
-                            className="border p-2 w-full rounded-md shadow-sm focus:ring focus:ring-blue-300" />
+                            className="border p-2 w-full rounded-md shadow-sm focus:ring focus:ring-blue-300 bg-gray-100" />
                     </div>
 
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Annual Rate (%)</label>
                         <input type="number" value={annualRate} onChange={e => setAnnualRate(Number(e.target.value))}
-                            className="border p-2 w-full rounded-md shadow-sm focus:ring focus:ring-blue-300" />
+                            className="border p-2 w-full rounded-md shadow-sm focus:ring focus:ring-blue-300 bg-gray-100" />
                     </div>
 
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Retirement Target (€)</label>
                         <input type="number" value={retirementTarget} onChange={e => setRetirementTarget(Number(e.target.value))}
-                            className="border p-2 w-full rounded-md shadow-sm focus:ring focus:ring-blue-300" />
+                            className="border p-2 w-full rounded-md shadow-sm focus:ring focus:ring-blue-300 bg-gray-100 " />
                     </div>
 
                     <button onClick={handleCalculate}
@@ -73,14 +73,14 @@ const InvestmentCalculator = () => {
                 </div>
 
                 {result && (
-                    <p className="mt-6 text-lg text-center text-green-600 font-semibold">
+                    <p className="mt-6 text-lg text-center text-green-700 font-bold">
                         You will reach your retirement goal in {result.years} years and {result.remainingMonths} months.
                     </p>
                 )}
 
                 <h2 className="text-lg font-semibold mt-8 text-gray-700">Future Projections:</h2>
                 <div className="overflow-x-auto">
-                    <table className="w-full mt-4 border-collapse border border-gray-300 shadow-md">
+                    <table className="w-full mt-4 border-collapse border border-gray-500 shadow-md">
                         <thead>
                             <tr className="bg-blue-500 text-white">
                                 <th className="border p-2">Years</th>
